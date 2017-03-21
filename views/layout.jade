@@ -1,0 +1,20 @@
+doctype HTML
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")   
+    body
+        - var Active = true;
+        script!= "(function() {localStorage.setItem('Active',JSON.stringify('test')); })();"
+        div(id='content')
+            if Active == true
+                block content
+            else
+                section(id='welcome-page')
+                    div(class='core-C-section')
+                        p You are currently not signed in! Please sign in below
+                        button signin
+
+        script(src='./scripts/test.js')

@@ -1,0 +1,70 @@
+extends layout
+
+block content
+    section(id='welcome-page')
+        header(class='title-section')
+            div(class='left-section')
+                img(class='logo' src='')
+                h1 #{CorpTitle}
+            div(class='right-section')
+                p Time Clock / Tools / Administration Systems for #{year}
+        
+        if Active == true    
+            include includes/timepunch.jade
+        else
+            section(class='core-L-section')
+                p Please log in by clicking the button below
+                div(class='button-container')
+                   a(href='/login') #[button Login]
+        
+        section(class='core-L-section')
+            h1(class='section-text-title') Search
+            div(class='section-text')
+                p View/Edit/Delete Punches
+                div(class='button-container')
+                    a(href='/timeclock') #[button View ALL time punches on file]
+    
+                    a(href='/timeclock/active') #[button View Clocked-in Volunteers]
+                
+                form(class='search-form' method='POST' action='search')
+                    select(name='searchType' onload="update(value)" onchange="update(value)")
+                        option( selected value='BadgeNum' ) Badge Number
+                        option( value='Department'  ) Department
+                    input(id='inputbox' type='text' name='searchQuery1' onkeypress='text(event)' maxlength='5' placeholder='Search...')
+                    select(hidden id='dropdownbox' name='searchQuery2')
+                        option(  value='Gopher') Gopher
+                        option(  disabled) --------------------------------
+                        optgroup(label='Operations Division')
+                            option(  value='Convention Operations') Convention Operations
+                            option(  value='Security') Security
+                            option(  value='Convention Logsitics') Convention Logsitics
+                        option(  disabled)
+                        optgroup(label='Business Division')
+                            option(  value='Convention Business Ops') Convention Business Ops
+                            option(  value='Registration Ops') Registration Ops
+                            option(  value='Hospitality') Hospitality
+                            option(  value='Dealers Den & Art Show') Dealers Den & Art Show
+                        option( disabled )
+                        optgroup(label='Entertainment Division')
+                            option(  value='Events') Events
+                            option(  value='Theatre') Theatre
+                            option(  value='Media and Press') Media & Press
+                            option(  value='Social Media') Social Media
+                        option( disabled )
+                        optgroup(label='Administration')
+                            option(  value='Convention/Hotel Liaison') Convention/Hotel Liaison
+                            option(  value='Development') Development
+                    button(id='searchbutton' type='submit') Search
+
+        section(class='core-L-section announcements')
+            h1(class='section-text-title') ⚠ Announcements
+            div(class='section-text')
+                each announcement in data
+                    div(class='announcement-box')
+                        p #[em #[strong Posted by:] #{announcement.AdminName}]
+                        p #[em Severity: ] #{announcement.Severity}
+                        p #{announcement.Content}
+                p Level 1-Very Low / Level 3-Moderate / Level 5-Critical
+                a(href='/announcements') #[button View ALL announcements]
+                a(href='/create-announcement') #[button Create Announcement]
+    script(src='./scripts/textv.js')

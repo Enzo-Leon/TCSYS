@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Announcements
+    a(href='/') #[button Go Back]
+    p Currently Sorting by #{sorted}
+    
+    p Sort Information by :
+    a(href='/announcements') #[button Newest First (default)]
+    a(href='/announcements/severity') #[button Severity]
+    a(href='/announcements/active') #[button Active]
+    section(id='announce-page')
+        div(class='announcements')
+            each announcement in data
+                div(class='announcement-box')
+                    p #[em #[strong Posted by:] #{announcement.AdminName}]
+                    p #[em Severity: ] #{announcement.Severity}
+                    p #{announcement.Content}

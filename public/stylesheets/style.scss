@@ -1,0 +1,223 @@
+$color-green: #69B764;
+$color-blue: #3495A9;
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: $color-blue;
+    font-family: 'Open Sans',sans-serif;
+}
+
+#welcome-page {
+    width: 100%;
+
+    margin: 0;
+    position: absolute;
+    .core-section,.core-C-section, .core-L-section,.core-R-section {
+        width: 32%;
+        display: inline-block;
+        margin: 10px .5%;
+        background: white;
+        border: 2px solid #222;
+        min-height: 400px;
+        height: auto;
+        box-sizing: border-box;
+        max-width: 500px;
+        min-width: 300px;
+        vertical-align: top;
+        .section-text-title {
+            width: 100%;
+            height: 35px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            border-bottom: 2px solid gray;
+        }
+        .section-text {
+            padding: 0 10px;
+        }
+        @media screen and (max-width: 1000px) {
+            width: 75%;
+            display: block;
+            margin: 5px auto;
+        }
+        .required-notice {
+            color: red;
+            float: right;
+            margin: 0 auto;
+            font-size: 12px;
+        }
+        .timeclock-form {
+            width: 80%;
+            height: auto;
+            margin: auto;
+            .radio {
+                width: 20%;
+                margin: auto;
+            }
+        }
+    }
+}
+.core-section {
+    clear: both;
+}
+
+.core-L-section {
+}
+
+.core-C-section {
+    
+}
+
+.core-R-section {
+
+}
+
+.button-container {
+    min-width: 300px;
+    margin: auto;
+    width: 75%;
+}
+
+
+.title-section {
+    width: 100%;
+    min-width: 400px;
+    margin: 0;
+    min-height: 150px;
+    background: white;
+    display: block;
+    border-bottom: 1px solid black;
+    .left-section {
+        display: inline-block;
+        width: 250px;
+        text-align: center;
+        margin: auto;
+        padding: 10px;
+        .logo {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            background: #69B764;
+            margin: auto 10px;
+        }
+        h1 {
+            padding: 10px;
+            display: inline-block;
+            font-size: 30px;
+            vertical-align: top;
+        }
+    }
+    .right-section {
+        width: 500px;
+        box-sizing: border-box;
+        float: right;
+        text-align: center;
+        margin: 90px auto 0;
+
+    }
+}
+
+#time-clock {
+    width: 95%;
+    margin: auto;
+    padding: 10px 0;
+    .time-punch {
+        width: 50%;
+        display: inline-block;
+        margin: 10px auto 0;
+        padding: 5px;
+        background: white;
+        border: 1px solid black;
+        box-sizing: border-box;
+        .ci {
+            background: $color-green;
+        }
+        li {
+            margin: 1px auto;
+            font-family: Arial;
+        }
+    }
+}
+
+#result-page {
+    .content-box {
+        position: absolute;
+        top: -25%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        min-height: 200px;
+        height: 15%;
+        min-width: 250px;
+        width: 25%;
+        background: white;
+        box-sizing: border-box;
+        padding: 10px;
+        border: 1px solid black;
+        a, button {
+            text-decoration: none;
+        }
+    }
+}
+
+#searchbutton {
+    display: block;
+    margin: 10px auto;
+}
+
+button {
+    width: 150px;
+    padding: 5px 0;
+    background: white;
+    border: 2px solid purple;
+    transition: all .25s;
+    margin: 10px 10px;
+    cursor: pointer;
+    &:hover {
+        border: 2px solid $color-green;
+    }
+    &:active {
+        border: 2px solid $color-blue;
+        transition: all .01s;
+    }
+    &:disabled {
+        cursor: default;
+        border: 2px solid gray;
+    }
+}
+
+select,input:not(.radio) {
+    width: 100%;
+    text-align: auto;
+    height: 25px;
+    margin: 20px auto 0;
+    text-align: right;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #AAA;
+    line-height: 25px;
+    padding-right: 5px;
+    box-sizing: border-box;
+}
+
+.announcements {
+    .announcement-box {
+        border-bottom: 1px solid gray;
+    }
+    button {
+        display: block;
+        margin: 15px auto;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+#announce-page {
+    width: 75%;
+    background: white;
+    margin: auto;
+}

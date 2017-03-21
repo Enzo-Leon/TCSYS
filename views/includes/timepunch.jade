@@ -1,0 +1,35 @@
+section(class='core-L-section')
+            h1(class='section-text-title') ⏰ Time Clock  
+            form(class='timeclock-form' method="POST" action='submittime')
+                input(type='text' onkeypress='text(event)'  placeholder='* UID / Badge #' required name='badgenumber' maxlength='5')
+                input(type='radio' id='radio-1' class='radio' name='clocktype' value='1' checked)
+                label(for='radio-1') Clock-in
+                input(type='radio' id='radio-2' class='radio' name='clocktype' value='0')
+                label Clock-Out
+
+                select(name='department')
+                    option(  value='Gopher') Gopher
+                    option(  disabled) --------------------------------
+                    optgroup(label='Operations Division')
+                        option(  value='Convention Operations') Convention Operations
+                        option(  value='Security') Security
+                        option(  value='Convention Logsitics') Convention Logsitics
+                    option(  disabled)
+                    optgroup(label='Business Division')
+                        option( disabled value='Convention Business Ops') Convention Business Ops
+                        option( disabled value='Registration Ops') Registration Ops
+                        option( disabled value='Hospitality') Hospitality
+                        option( disabled value='Dealers Den & Art Show') Dealers Den & Art Show
+                    option(  disabled)
+                    optgroup(label='Entertainment Division')
+                        option( disabled value='Events') Events
+                        option( disabled value='Theatre') Theatre
+                        option( disabled value='Media and Press') Media & Press
+                        option( disabled value='Social Media') Social Media
+                    option(  disabled)
+                    optgroup(label='Administration')
+                        option( disabled value='Convention/Hotel Liaison') Convention/Hotel Liaison
+                        option( disabled value='Development') Development
+                button(type='submit') Time Punch
+                button(type='reset') Clear
+                p Please be sure to select your proper department for the volunteer you're clocking in!

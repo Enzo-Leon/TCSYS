@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    section(id='result-page')
+        div(class='content-box')
+            h1 Submitted data
+            each query in data
+                p #{query.Response}
+        
+            a(href='/') #[button Ok]
+            - var Active = LS;
+            if Active == true
+                p This is a test
+            else
+                p Error
+            

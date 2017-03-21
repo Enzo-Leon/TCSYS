@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1 Create announcement
+    p #{ticker || "Supply information below"}
+    textarea
+    a('/submit-announcement') #[button(disabled) Post]

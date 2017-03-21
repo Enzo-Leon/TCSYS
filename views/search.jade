@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    section(id='time-clock')
+        p Viewing search results #[a(href='/') Back]
+
+        each result in queries
+            div(class='time-punch')
+                p BadgeNum - #{result.BadgeNum}
+                p Department - #{result.Department}
+                p Hours Overview
+                p Shifts Volunteered - #{result.ShiftsV}
+                p Hours Volunteered - #{result.TotalHours}
+                button(disabled) More Info

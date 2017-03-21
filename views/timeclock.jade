@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    section(id='time-clock')
+        header(class='title-section')
+            h1 #{title}
+            a(href='/') Return to TimeClock
+        each content in data
+            div(class='time-punch')
+                ul
+                    li ID : #{content.ID} || #[strong Badge Number : #{content.BadgeNum}]
+                    li Department : #{content.Department}
+                    li Clock-in at || #{content.CI}
+                    li Clock-Out at || #{content.CO || "Volunteer still clocked-in"}
+                    if content.TotalHours != undefined
+                        li Hours Worked || #{content.TotalHours}
